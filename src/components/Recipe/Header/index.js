@@ -1,8 +1,5 @@
-// == Import npm
 import React from 'react';
 import PropTypes from 'prop-types';
-
-// == Import SCSS
 
 import './header.scss';
 
@@ -26,7 +23,6 @@ const Header = ({
   </header>
 );
 
-// == Validation des props
 Header.propTypes = {
   name: PropTypes.string.isRequired,
   thumbnail: PropTypes.string.isRequired,
@@ -34,5 +30,4 @@ Header.propTypes = {
   difficulty: PropTypes.string.isRequired,
 };
 
-// == Export
 export default Header;

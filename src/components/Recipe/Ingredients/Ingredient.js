@@ -1,8 +1,6 @@
-// == Import npm
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// == Composant
 const Ingredient = ({
   id, quantity, unit, name,
 }) => (
@@ -16,13 +14,14 @@ const Ingredient = ({
   </div>
 );
 
-// == Validation de props
-Ingredient.propTypes = { // mes props sont de type...
-  id: PropTypes.number.isRequired, // un id
-  quantity: PropTypes.number.isRequired, // une quantité
-  unit: PropTypes.string.isRequired, // une unité
-  name: PropTypes.string.isRequired, // un nom
+Ingredient.propTypes = {
+  id: PropTypes.number.isRequired,
+  quantity: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]).isRequired,
+  unit: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
-// == Export
 export default Ingredient;

@@ -1,11 +1,8 @@
-// == Import npm
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// == Import SCSS
 import './instructions.scss';
 
-// == Composant
 const Instructions = ({ steps }) => (
   <section className="steps">
     {steps.map((step) => (
@@ -16,11 +13,10 @@ const Instructions = ({ steps }) => (
   </section>
 );
 
-Instructions.propTypes = { // je valide mes proptypes
-  steps: PropTypes.arrayOf( // je veux un tableau...
-    PropTypes.string.isRequired, // de strings (obligatoires)
-  ).isRequired, // le tableau est aussi obligatoire...
+Instructions.propTypes = {
+  steps: PropTypes.arrayOf(
+    PropTypes.string.isRequired,
+  ).isRequired,
 };
 
-// == Export
 export default Instructions;

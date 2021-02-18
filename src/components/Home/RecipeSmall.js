@@ -1,15 +1,24 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const RecipeSmall = () => (
+import { slugifyTitle } from 'src/utils';
+
+const RecipeSmall = ({ title, thumbnail, difficulty }) => (
   <article className="recipe-small">
-    <img alt="" src="https://images.pexels.com/photos/53483/strawberries-crepe-dessert-sweet-53483.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" />
+    <img alt="" src={thumbnail} />
     <div className="recipe-small-content">
-      <h2>Crèpes raffinées</h2>
-      <p>Difficulté: facile</p>
-      <Link to="/recipe/recette1">Voir la recette</Link>
+      <h2>{title}</h2>
+      <p>Difficulté: {difficulty}</p>
+      <Link to={`/recipe/${slugifyTitle(title)}`}>Voir la recette</Link>
     </div>
   </article>
 );
+
+RecipeSmall.propTypes = {
+  title: PropTypes.string.isRequired,
+  thumbnail: PropTypes.string.isRequired,
+  difficulty: PropTypes.string.isRequired,
+};
 
 export default RecipeSmall;

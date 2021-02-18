@@ -1,12 +1,9 @@
 .header {
-  // le code du header
   position: relative;
   margin-bottom: 2rem;
   color: #fff;
 
-  // c'est comme si l'on avait écrit .header__image !
   &__image {
-    // le code de notre image
     display: block;
     max-width: 100%;
     height: auto;
